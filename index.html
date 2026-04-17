@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>izipay — Cobra desde tu celular</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <meta name="theme-color" content="#008280" />
+</head>
+<body>
+
+<!-- ═══════════════════ NAVBAR ═══════════════════ -->
+<nav class="navbar">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a href="#" class="nav-logo">
+        <img src="assets/Logo.svg" alt="izipay" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">Ventas físicas <span class="chevron">›</span></a></li>
+        <li><a href="#">Ventas digitales <span class="chevron">›</span></a></li>
+        <li><a href="#">Desarrolladores</a></li>
+        <li><a href="#">Más info <span class="chevron">›</span></a></li>
+      </ul>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="btn-portal">Portal clientes</a>
+      <a href="#" class="btn-adquirir">Adquirir</a>
+    </div>
+    <button class="hamburger" id="menuBtn"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- ═══════════════════ HERO CAROUSEL ═══════════════════ -->
+<section class="hero-section">
+  <div class="hero-wrap">
+    <div class="carousel" id="carousel">
+
+      <!-- SLIDE 1: APP izipay (Portada.png) -->
+      <div class="slide active" data-slide="0">
+        <img class="slide-full" src="assets/Portada.png" alt="¿Qué esperas para empezar a cobrar desde tu celular?" />
+      </div>
+
+      <!-- SLIDE 2: POS combo (Portada-1.png) -->
+      <div class="slide" data-slide="1">
+        <img class="slide-full" src="assets/Portada-1.png" alt="Consigue tu POS izipay y multiplica tus ventas" />
+      </div>
+
+      <!-- SLIDE 3: Retira al instante (Portada-2.png) -->
+      <div class="slide" data-slide="2">
+        <img class="slide-full" src="assets/Portada-2.png" alt="Solo con tu POS izipay retira tu dinero al instante" />
+      </div>
+
+    </div><!-- /carousel -->
+
+    <!-- Zonas invisibles clickeables para navegar (la imagen ya trae sus propios dots/flechas) -->
+    <button class="hero-nav-zone left"  onclick="changeSlide(-1)" aria-label="Slide anterior"></button>
+    <button class="hero-nav-zone right" onclick="changeSlide(1)"  aria-label="Slide siguiente"></button>
+  </div>
+</section>
+
+<!-- ═══════════════════ QUICK TOOLS BAR ═══════════════════ -->
+<div class="quicktools-bar">
+  <span class="quicktools-label">Herramientas frecuentes:</span>
+  <div class="quicktools-list">
+    <a href="#" class="qtool">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="5" y="2" width="14" height="20" rx="2" stroke="#006462" stroke-width="2"/><line x1="12" y1="18" x2="12" y2="18" stroke="#006462" stroke-width="2" stroke-linecap="round"/></svg>
+      App izipay
+    </a>
+    <a href="#" class="qtool">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="2" y="6" width="20" height="14" rx="2" stroke="#006462" stroke-width="2"/><line x1="2" y1="10" x2="22" y2="10" stroke="#006462" stroke-width="2"/></svg>
+      POS Android
+    </a>
+    <a href="#" class="qtool">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71" stroke="#006462" stroke-width="2" stroke-linecap="round"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71" stroke="#006462" stroke-width="2" stroke-linecap="round"/></svg>
+      Link de Pago
+    </a>
+    <a href="#" class="qtool">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="7" height="7" stroke="#006462" stroke-width="2"/><rect x="14" y="3" width="7" height="7" stroke="#006462" stroke-width="2"/><rect x="3" y="14" width="7" height="7" stroke="#006462" stroke-width="2"/><rect x="16" y="16" width="2" height="2" fill="#006462"/></svg>
+      QR Parlante
+    </a>
+    <a href="#" class="qtool">Interbank negocios</a>
+  </div>
+</div>
+
+<!-- ═══════════════════ SECTORES ═══════════════════ -->
+<section class="sectores-section">
+  <div class="sectores-inner">
+    <div class="sectores-header">
+      <h2><span class="sec-light">Haz que tu negocio</span> <span class="sec-bold">siga creciendo</span></h2>
+      <p>Productos diseñados para todos los sectores</p>
+    </div>
+
+    <div class="sector-tabs-wrap">
+      <div class="sector-tabs" id="sectorTabs">
+        <button class="stab-sector active" data-sector="restaurantes" onclick="switchSector(this)">Restaurantes y bares</button>
+        <button class="stab-sector" data-sector="tiendas" onclick="switchSector(this)">Tiendas y ventas</button>
+        <button class="stab-sector" data-sector="salud" onclick="switchSector(this)">Salud, belleza y bienestar</button>
+        <button class="stab-sector" data-sector="educacion" onclick="switchSector(this)">Educación viajes y entretenimiento</button>
+        <button class="stab-sector" data-sector="servicios" onclick="switchSector(this)">Servicios profesionales</button>
+      </div>
+    </div>
+
+    <div class="sector-card">
+      <div class="sector-left">
+        <h3 id="sectorTitle">Restaurantes y Bares</h3>
+        <p id="sectorDesc">Tecnología diseñada para todos los tipos de negocio de comida.</p>
+        <div class="sector-accordion">
+          <div class="acc-item open">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <span>Acepta todos los tipos de pago</span>
+              <svg class="acc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="acc-body">
+              <p>Acepta pagos en línea, sin conexión, desde la mesa o con código QR. Además, respalda las fuentes de ingresos como el servicio de catering con nuestra función de facturación.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <span>Administra tus pedidos en un solo lugar</span>
+              <svg class="acc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="acc-body">
+              <p>Controla todos tus pedidos desde una sola plataforma, reduciendo errores y aumentando la eficiencia de tu equipo.</p>
+            </div>
+          </div>
+          <div class="acc-item">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <span>Impulsa tu negocio al siguiente nivel</span>
+              <svg class="acc-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+            <div class="acc-body">
+              <p>Accede a reportes detallados, análisis de ventas y herramientas de fidelización para hacer crecer tu negocio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="sector-rec">
+          <span class="sector-rec-title">Te recomendamos:</span>
+          <div class="sector-rec-products">
+            <div class="srec-card">
+              <img src="Product/11.06.25-IMAGENES-POS-P2-SE 1.png" alt="POS P2 Lite SE" />
+              <span class="srec-badge">Nuevo</span>
+            </div>
+            <div class="srec-card">
+              <img src="Product/Android-P2-Mini_frontal 1.png" alt="POS P2 Mini" />
+            </div>
+            <div class="srec-card">
+              <img src="Product/P2 Lite SE - Frontal porting 3-1.png" alt="QR Parlante" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sector-right">
+        <img src="assets/sector-restaurantes.png" alt="Sector visual" class="sector-img" id="sectorImg" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MEDIOS DE PAGO ═══════════════════ -->
+<section class="medios-section">
+  <div class="container">
+    <h2 class="section-title-dark">Aceptamos todos <strong>los medios de pago</strong></h2>
+    <div class="medios-grid">
+      <div class="medio-card">
+        <svg viewBox="0 0 100 32" xmlns="http://www.w3.org/2000/svg" style="height:32px"><text x="50" y="24" font-family="Arial Black, Arial, sans-serif" font-size="26" font-weight="900" fill="#1A1F71" text-anchor="middle" font-style="italic" letter-spacing="-1">VISA</text></svg>
+      </div>
+      <div class="medio-card">
+        <img src="assets/mastercard.svg" alt="Mastercard" />
+      </div>
+      <div class="medio-card">
+        <img src="assets/amex.svg" alt="American Express" />
+      </div>
+      <div class="medio-card">
+        <img src="assets/club.svg" alt="Diners Club" />
+      </div>
+      <div class="medio-card">
+        <img src="assets/PLIN.png" alt="PLIN" />
+      </div>
+      <div class="medio-card">
+        <img src="assets/yape.png" alt="Yape" />
+      </div>
+      <div class="medio-card">
+        <img src="assets/izipay-ya.png" alt="izipay Ya" />
+      </div>
+      <div class="medio-card">
+        <img src="assets/Apple_Pay_Mark_RGB_041619 1.png" alt="Apple Pay" />
+      </div>
+      <div class="medio-card">
+        <img src="assets/GPay_Acceptance_Mark_FullColor 1.png" alt="Google Pay" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ BANNER PROMOCIONAL ═══════════════════ -->
+<section class="banner-promo-section">
+  <div class="container">
+    <div class="banner-glass-wrap">
+      <p class="banner-glass-title"><span>Promociones</span> que tenemos para tí</p>
+      <div class="banner-card">
+        <div class="banner-img-wrap">
+          <img src="assets/imagen baner 2 1.png" alt="Potencia tu negocio con izipay desde S/59 al mes" />
+        </div>
+      </div>
+      <div class="banner-dots">
+        <span class="bdot active"></span>
+        <span class="bdot"></span>
+        <span class="bdot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ PRODUCTOS ═══════════════════ -->
+<section class="productos-section">
+  <div class="container">
+    <div class="prod-header">
+      <h2><span class="sec-light2">Un producto pensado</span> <span class="sec-bold2">para cada negocio</span></h2>
+      <p class="prod-subtitle">Escoge el que más se adapte al tuyo</p>
+    </div>
+    <div class="prod-type-tabs">
+      <button class="ptype active" onclick="switchProdType(this)">Ventas físicas</button>
+      <button class="ptype" onclick="switchProdType(this)">Ventas digitales</button>
+    </div>
+    <div class="prod-sub-tabs">
+      <button class="psub active" onclick="switchSubTab(this)">Equipos solos</button>
+      <button class="psub" onclick="switchSubTab(this)">Integrados</button>
+      <button class="psub" onclick="switchSubTab(this)">QR Parlante</button>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="prod-img-wrap">
+          <img src="Product/11.06.25-IMAGENES-POS-P2-SE 1.png" alt="POS P2 SE" />
+        </div>
+        <div class="prod-info">
+          <h3>POS Android P2 SE</h3>
+          <p>Cobros presenciales rápidos y seguros.</p>
+          <div class="prod-price">
+            <strong>S/ 148.00</strong>
+            <span class="prod-igv">INCL. IGV</span>
+          </div>
+          <a href="#" class="btn-prod-buy">Comprar <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><path d="M9 12h6m-3-3v6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <a href="#" class="btn-prod-link">Ver más →</a>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img-wrap">
+          <img src="Product/P2 Lite SE - Frontal porting 3-1.png" alt="POS Android P2 Lite SE" />
+        </div>
+        <div class="prod-info">
+          <h3>POS Android P2 Lite SE</h3>
+          <p>Compacto y eficiente para tu negocio.</p>
+          <div class="prod-price">
+            <strong>S/ 148.00</strong>
+            <span class="prod-igv">INCL. IGV</span>
+          </div>
+          <a href="#" class="btn-prod-buy">Comprar <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><path d="M9 12h6m-3-3v6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <a href="#" class="btn-prod-link">Ver más →</a>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="prod-img-wrap">
+          <img src="Product/Android-P2-Mini_frontal 1.png" alt="POS Android P2 Mini" />
+        </div>
+        <div class="prod-info">
+          <h3>POS Android P2 Mini</h3>
+          <p>Ideal para comercios móviles o pequeños.</p>
+          <div class="prod-price">
+            <strong>S/ 108.00</strong>
+            <span class="prod-igv">INCL. IGV</span>
+          </div>
+          <a href="#" class="btn-prod-buy">Comprar <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="2" stroke="white" stroke-width="2"/><path d="M9 12h6m-3-3v6" stroke="white" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <a href="#" class="btn-prod-link">Ver más →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ SIMULADOR ═══════════════════ -->
+<section class="simulador-section">
+  <div class="container">
+    <div class="sim-inner">
+      <div class="sim-left">
+        <h2 class="sim-title">Simulador izipay</h2>
+        <p class="sim-desc">Calcula tu ganancia en segundos y conoce cuánto te depositamos por cada venta</p>
+        <div class="sim-deposit">
+          <h4>¿Cuándo recibirás el depósito?</h4>
+          <div class="sim-item">
+<span class="check-emoji">✓</span>
+            <div>
+              <strong>Retiro inmediato</strong>
+              <span>Si usas Interbank desde la APP izipay</span>
+            </div>
+          </div>
+          <div class="sim-item">
+<span class="check-emoji">✓</span>
+            <div>
+              <strong>En 24 horas</strong>
+              <span>Si transfieres a otro banco desde la APP.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sim-card">
+        <div class="sim-tabs">
+          <button class="stab active" onclick="switchSimTab(this, 'fisica')">Ventas físicas</button>
+          <button class="stab" onclick="switchSimTab(this, 'online')">Ventas online</button>
+        </div>
+        <div class="sim-form" id="sim-fisica">
+          <div class="sim-row">
+            <div class="sim-field">
+              <label>¿Cuánto vendiste?</label>
+              <input type="number" placeholder="S/0.00" id="sim-venta" oninput="calcSim()" />
+            </div>
+            <div class="sim-field">
+              <label>Origen de tarjeta</label>
+              <div class="sim-radios">
+                <label class="radio-label">
+                  <input type="radio" name="origen" value="0.0409" checked onchange="calcSim()" /> Nacional
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="origen" value="0.0549" onchange="calcSim()" /> Extranjera
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="sim-row">
+            <div class="sim-field">
+              <label>Comisión izipay*</label>
+              <div class="sim-output" id="sim-comision">S/ 0.00</div>
+            </div>
+            <div class="sim-field">
+              <label>Te depositamos</label>
+              <div class="sim-output sim-output-main" id="sim-deposito">S/ 0.00</div>
+            </div>
+          </div>
+          <div class="sim-row sim-email-row">
+            <div class="sim-field sim-field-grow">
+              <label>Correo electrónico:</label>
+              <input type="email" placeholder="ejemplo@email.com" />
+            </div>
+            <button class="btn-sim-send">Enviar</button>
+          </div>
+          <label class="sim-privacy">
+            <input type="checkbox" checked />
+            Acepto el uso de mis datos personales según la <a href="#">Política de Privacidad.</a>
+          </label>
+        </div>
+      </div>
+      <div class="sim-disclaimer-card">
+        <strong>Productos físicos:</strong> POS Android P2 Lite SE, POS Android P2 Mini y POS Android P2 SE. Productos virtuales: izipay web e izipay online. El APP izipay cuenta con distintas comisiones según el tipo de cobro que se use, siendo 1.99% la comisión más baja y exclusiva para nuevos clientes que utilicen el cobro a tarjetas desde el celular.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ TESTIMONIOS ═══════════════════ -->
+<section class="testimonios-section">
+  <div class="container">
+    <div class="testi-header-row">
+      <div class="testi-header-text">
+        <h2 class="testi-title">Una nueva era <strong>para<br/>los pagos digitales</strong></h2>
+        <p class="testi-sub">Miles de profesionales, fundadores y operadores confían en nosotros a diario.</p>
+        <a href="#" class="testi-btn">Déjanos tu opinión <span aria-hidden="true">›</span></a>
+      </div>
+      <div class="testi-arrows">
+        <button class="testi-arrow" onclick="testiSlide(-1)" aria-label="anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <button class="testi-arrow" onclick="testiSlide(1)" aria-label="siguiente">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="testi-track-wrap">
+      <div class="testi-track" id="testiTrack">
+
+        <article class="testi-card red">
+          <div class="testi-quote-mark">"</div>
+          <p class="testi-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="testi-person">
+            <img src="assets/testi-1.png" alt="Carlos Manrique" />
+            <div class="testi-person-info">
+              <strong>Carlos Manrique</strong>
+              <span>Product designer</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card teal">
+          <div class="testi-quote-mark">"</div>
+          <p class="testi-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="testi-person">
+            <img src="assets/testi-2.png" alt="Marcos Jimenez" />
+            <div class="testi-person-info">
+              <strong>Marcos Jimenez</strong>
+              <span>CEO tienda online</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="testi-card red">
+          <div class="testi-quote-mark">"</div>
+          <p class="testi-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          <div class="testi-person">
+            <img src="assets/testi-1.png" alt="Claudia Manrique" />
+            <div class="testi-person-info">
+              <strong>Claudia Manrique</strong>
+              <span>Arquitecta</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ BENEFICIOS ═══════════════════ -->
+<section class="beneficios-section">
+  <div class="bene-inner">
+    <div class="bene-left">
+      <p class="bene-subtitle">Somos tu mejor aliado</p>
+      <h2 class="bene-title">para crecer sin límites</h2>
+    </div>
+    <div class="bene-cards">
+      <div class="bene-card">
+        <div class="bene-img-wrap">
+          <img src="assets/icon-seguridad.png" alt="Seguridad y confianza" />
+        </div>
+        <div class="bene-info">
+          <h4>Seguridad y confianza</h4>
+          <p>Tus pagos y los de tus clientes están protegidos con los más altos estándares de seguridad</p>
+        </div>
+      </div>
+      <div class="bene-card">
+        <div class="bene-img-wrap">
+          <img src="assets/hero-bg-celular.png" alt="Soluciones multicanal" />
+        </div>
+        <div class="bene-info">
+          <h4>Soluciones multicanal</h4>
+          <p>Acepta pagos en línea, de manera presencial y a través de canales de autoservicio de forma sencilla.</p>
+        </div>
+      </div>
+      <div class="bene-card">
+        <div class="bene-img-wrap">
+          <img src="assets/sector-tiendas.png" alt="Integración fácil" />
+        </div>
+        <div class="bene-info">
+          <h4>Integración fácil</h4>
+          <p>Conecta izipay a tu sitio web o sistema de manera rápida y sin complicaciones.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ MARCAS ═══════════════════ -->
+<section class="marcas-section">
+  <div class="container">
+    <div class="marcas-header">
+      <h2>Grandes marcas, un mismo aliado</h2>
+      <p>Únete a los más de 700,000 comercios que transformaron sus ventas con izipay.</p>
+    </div>
+    <div class="marcas-row">
+      <img src="assets/logo-ishop-co-800-v1 1.png" alt="iShop" />
+      <img src="assets/supermercados-wong-logo-png_seeklogo-234286 1.png" alt="Wong" />
+      <img src="assets/centro-comercial-plaza-san-miguel-95 1.png" alt="Plaza San Miguel" />
+      <img src="assets/Cencosud_logo.svg 1.png" alt="Cencosud" />
+      <img src="assets/Interbank_logo.svg 1.png" alt="Interbank" />
+      <img src="assets/Logo_Ripley 1.svg" alt="Ripley" />
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ CTA FINAL ═══════════════════ -->
+<section class="cta-section">
+  <img class="cta-bg" src="assets/fondo-baner-2b 1.png" alt="" />
+  <div class="container cta-content">
+    <p class="cta-sub">¡Cambiamos lo que no tiene sentido para que comprar y vender sea más fácil!</p>
+    <h2 class="cta-title">Empieza hoy a potenciar tu negocio</h2>
+    <div class="cta-highlight">Con izipay, cobrar es fácil, rápido y seguro</div>
+    <div class="cta-btns">
+      <a href="#" class="btn-cta-white">
+        Comprar
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#" class="btn-cta-outline">Contáctanos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ FOOTER ═══════════════════ -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container footer-cols">
+      <div class="fcol">
+        <h4>Sobre izipay</h4>
+        <ul>
+          <li><a href="#">Somos izipay</a></li>
+          <li><a href="#">Nuestro impacto</a></li>
+          <li><a href="#">Postula</a></li>
+          <li><a href="#">Intranet</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Orientación</h4>
+        <ul>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Códigos de transacciones denegadas</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Documentación</h4>
+        <ul>
+          <li><a href="#">Términos y condiciones</a></li>
+          <li><a href="#">Tarifario</a></li>
+          <li><a href="#">Política de privacidad</a></li>
+          <li><a href="#">Código de ética</a></li>
+          <li><a href="#">Otros documentos</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <h4>Contáctanos</h4>
+        <p class="footer-hours">De lunes a domingo<br/>de 8 a.m a 8 p.m.</p>
+        <div class="footer-phone">
+          <span>Telf:</span>
+          <a href="tel:998222333" class="phone-badge">
+            <img src="assets/Group 1707478176.svg" alt="WhatsApp" width="20" />
+            998 222 333
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <img src="assets/Logo.svg" alt="izipay" class="footer-logo" />
+      <div class="footer-bottom-links">
+        <a href="#" class="footer-link-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-12a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-16a2 2 0 0 0-2-2zm-9 15h-2v-6h2zm-1-7a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm7 7h-2v-3a1 1 0 0 0-2 0v3h-2v-6h2v.79a2.5 2.5 0 0 1 4 2.21z"/></svg>
+          Libro de reclamaciones
+        </a>
+        <span class="footer-divider">|</span>
+        <a href="#" class="footer-link-item">
+          <span>Canal ético</span>
+          <span class="footer-link-sub">Conoce cómo realizar una denuncia</span>
+        </a>
+      </div>
+      <div class="footer-social">
+        <a href="#" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp flotante -->
+<a href="tel:998222333" class="whatsapp-float">
+  <img src="assets/Group 1707478176.svg" alt="WhatsApp" />
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
