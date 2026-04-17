@@ -200,16 +200,36 @@
 <section class="banner-promo-section">
   <div class="container">
     <div class="banner-glass-wrap">
-      <p class="banner-glass-title"><span>Promociones</span> que tenemos para tí</p>
-      <div class="banner-card">
-        <div class="banner-img-wrap">
-          <img src="assets/imagen baner 2 1.png" alt="Potencia tu negocio con izipay desde S/59 al mes" />
+      <p class="banner-glass-title"><span>Promociones</span> que tenemos para ti</p>
+
+      <div class="banner-carousel">
+        <button class="banner-arrow left" onclick="bannerSlide(-1)" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="banner-track-wrap">
+          <div class="banner-track" id="bannerTrack">
+            <div class="banner-slide active">
+              <img src="assets/imagen baner 2 1.png" alt="Potencia tu negocio con Ari a tu POS izipay desde S/59 al mes" />
+            </div>
+            <div class="banner-slide">
+              <img src="assets/imagen baner 2 1.png" alt="Promo 2" />
+            </div>
+            <div class="banner-slide">
+              <img src="assets/imagen baner 2 1.png" alt="Promo 3" />
+            </div>
+          </div>
         </div>
+
+        <button class="banner-arrow right" onclick="bannerSlide(1)" aria-label="Siguiente">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
       </div>
-      <div class="banner-dots">
-        <span class="bdot active"></span>
-        <span class="bdot"></span>
-        <span class="bdot"></span>
+
+      <div class="banner-dots" id="bannerDots">
+        <button class="bdot active" onclick="goBanner(0)" aria-label="Slide 1"></button>
+        <button class="bdot" onclick="goBanner(1)" aria-label="Slide 2"></button>
+        <button class="bdot" onclick="goBanner(2)" aria-label="Slide 3"></button>
       </div>
     </div>
   </div>

@@ -80,6 +80,20 @@ function calcSim() {
     deposito > 0 ? 'S/ ' + deposito.toFixed(2) : 'S/ 0.00';
 }
 
+/* ─── BANNER PROMO CAROUSEL ──────────────────────────── */
+let bannerIdx = 0;
+const bannerTotal = 3;
+function goBanner(i) {
+  const track = document.getElementById('bannerTrack');
+  const dots  = document.querySelectorAll('#bannerDots .bdot');
+  if (!track) return;
+  bannerIdx = (i + bannerTotal) % bannerTotal;
+  track.style.transform = `translateX(-${bannerIdx * 100}%)`;
+  dots.forEach((d, k) => d.classList.toggle('active', k === bannerIdx));
+}
+function bannerSlide(dir) { goBanner(bannerIdx + dir); }
+setInterval(() => { if (document.getElementById('bannerTrack')) bannerSlide(1); }, 6000);
+
 /* ─── TESTIMONIOS SLIDER ─────────────────────────────── */
 let testiOffset = 0;
 function testiSlide(dir) {
