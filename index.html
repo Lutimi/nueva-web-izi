@@ -201,8 +201,35 @@
   <div class="container">
     <div class="banner-glass-wrap">
       <p class="banner-glass-title"><span>Promociones</span> que tenemos para ti</p>
-      <div class="banner-single">
-        <img src="Product/1920x592 4.png" alt="Potencia tu negocio sumándole Ari a tu POS izipay desde S/59 al mes" />
+
+      <div class="banner-carousel">
+        <button class="banner-arrow left" onclick="bannerSlide(-1)" aria-label="Anterior">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <div class="banner-track-wrap">
+          <div class="banner-track" id="bannerTrack">
+            <div class="banner-slide active">
+              <img src="Product/1920x592 4.png" alt="Potencia tu negocio sumándole Ari a tu POS izipay desde S/59 al mes" />
+            </div>
+            <div class="banner-slide">
+              <img src="Product/image 177.png" alt="¡QUE SUENE! El primer parlante que confirma tus ventas" />
+            </div>
+            <div class="banner-slide">
+              <img src="Product/image 176.png" alt="Súmale Ari a tu POS y emite boletas electrónicas en un instante" />
+            </div>
+          </div>
+        </div>
+
+        <button class="banner-arrow right" onclick="bannerSlide(1)" aria-label="Siguiente">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+
+      <div class="banner-dots" id="bannerDots">
+        <button class="bdot active" onclick="goBanner(0)" aria-label="Slide 1"></button>
+        <button class="bdot" onclick="goBanner(1)" aria-label="Slide 2"></button>
+        <button class="bdot" onclick="goBanner(2)" aria-label="Slide 3"></button>
       </div>
     </div>
   </div>

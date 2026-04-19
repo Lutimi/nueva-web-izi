@@ -362,15 +362,68 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .banner-glass-title span { color: #008380; font-weight: 700; }
 
 
-.banner-single {
-  border-radius: 20px;
-  overflow: hidden;
+.banner-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
-.banner-single img {
+.banner-arrow {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid #B6E0DD;
+  background: #fff;
+  color: #008380;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background .2s, color .2s, border-color .2s, transform .15s;
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.banner-arrow:hover {
+  background: #008380;
+  color: #fff;
+  border-color: #008380;
+  transform: scale(1.05);
+}
+.banner-track-wrap {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 20px;
+}
+.banner-track {
+  display: flex;
+  transition: transform .5s ease;
+}
+.banner-slide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+.banner-slide img {
   width: 100%;
   height: auto;
   display: block;
 }
+.banner-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+.bdot {
+  border: 0;
+  cursor: pointer;
+  border-radius: 9999px;
+  background: #D1D5DB;
+  padding: 0;
+  transition: all .25s;
+}
+.bdot.active { width: 28px; height: 8px; background: #008380; }
+.bdot:not(.active) { width: 8px; height: 8px; }
+.bdot:not(.active):hover { background: #9CA3AF; }
 
 @media (max-width: 768px) {
   .banner-glass-wrap { padding: 28px 16px 20px; border-radius: 28px; }
