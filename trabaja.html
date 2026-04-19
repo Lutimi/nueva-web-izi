@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -99,10 +99,9 @@
         </div>
       </div>
     </div>
-    <!-- imagen placeholder hasta que el usuario provea asset -->
-    <div style="background:linear-gradient(135deg,#F3FCFC,#E0F5F5);border-radius:32px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
-      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#006462" stroke-width="1"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-      <span style="font-size:13px;color:#006462;opacity:.6;">Imagen del equipo<br/>(pendiente)</span>
+    <div style="border-radius:32px;overflow:hidden;aspect-ratio:4/3;">
+      <img src="assets/otrassetions/Diseu{00F1}o futuro.png" alt="Diseña tu futuro en izipay"
+           style="width:100%;height:100%;object-fit:cover;" />
     </div>
   </div>
 </section>
@@ -115,32 +114,35 @@
     <p class="section-subtitle">Iniciativas diseñadas para estudiantes, recién egresados y profesionales con ganas de crecer.</p>
     <div class="programas-grid">
       <div class="programa-card">
-        <div class="programa-head">
-          <div class="programa-tag">#Hackaizi</div>
-          <h3>Hackathon izipay</h3>
+        <div style="overflow:hidden;height:180px;">
+          <img src="assets/otrassetions/programa.png" alt="#Hackaizi" style="width:100%;height:100%;object-fit:cover;" />
         </div>
         <div class="programa-body">
-          <p>Nuestro hackathon interno donde el talento interno y externo compite para crear soluciones de impacto real. Una experiencia intensa de innovación en 48 horas.</p>
+          <div class="programa-tag" style="color:var(--izi-teal);font-weight:700;">#Hackaizi</div>
+          <h3 style="font-size:20px;font-weight:800;color:var(--izi-dark);margin:8px 0;">Hackathon izipay</h3>
+          <p>Nuestro hackathon interno donde el talento compite para crear soluciones de impacto real. Una experiencia intensa de innovación en 48 horas.</p>
           <a href="https://www.izipay.pe/postula-izipay/" target="_blank" class="btn-programa">Más información</a>
         </div>
       </div>
       <div class="programa-card">
-        <div class="programa-head" style="background:linear-gradient(135deg,#008380,#006462);">
-          <div class="programa-tag">#Traineeizipay</div>
-          <h3>Programa Trainee</h3>
+        <div style="overflow:hidden;height:180px;">
+          <img src="assets/otrassetions/programa-1.png" alt="#Traineeizipay" style="width:100%;height:100%;object-fit:cover;" />
         </div>
         <div class="programa-body">
+          <div class="programa-tag" style="color:var(--izi-teal);font-weight:700;">#Traineeizipay</div>
+          <h3 style="font-size:20px;font-weight:800;color:var(--izi-dark);margin:8px 0;">Programa Trainee</h3>
           <p>Un programa de desarrollo acelerado para recién egresados con alto potencial. Rotación por áreas clave, mentoría ejecutiva y proyectos con impacto real.</p>
           <a href="https://www.izipay.pe/postula-izipay/" target="_blank" class="btn-programa">Postular ahora</a>
         </div>
       </div>
       <div class="programa-card">
-        <div class="programa-head" style="background:linear-gradient(135deg,#FF4240,#CC2020);">
-          <div class="programa-tag">#iziPracticamos</div>
-          <h3>Prácticas Profesionales</h3>
+        <div style="overflow:hidden;height:180px;">
+          <img src="assets/otrassetions/programa-2.png" alt="#iziPracticamos" style="width:100%;height:100%;object-fit:cover;" />
         </div>
         <div class="programa-body">
-          <p>Para estudiantes universitarios que quieren ganar experiencia real. Trabaja en proyectos estratégicos mientras sigues tus estudios, con horario flexible.</p>
+          <div class="programa-tag" style="color:#FF4240;font-weight:700;">#iziPracticamos</div>
+          <h3 style="font-size:20px;font-weight:800;color:var(--izi-dark);margin:8px 0;">Prácticas Profesionales</h3>
+          <p>Para estudiantes universitarios que quieren ganar experiencia real. Trabaja en proyectos estratégicos con horario flexible.</p>
           <a href="https://www.izipay.pe/postula-izipay/" target="_blank" class="btn-programa" style="background:#FF4240;">Aplicar</a>
         </div>
       </div>

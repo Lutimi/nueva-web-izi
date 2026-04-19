@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -15,9 +15,7 @@
 <nav class="navbar">
   <div class="nav-inner">
     <div class="nav-left">
-      <a href="index.html" class="nav-logo">
-        <img src="assets/Logo.svg" alt="izipay" />
-      </a>
+      <a href="index.html" class="nav-logo"><img src="assets/Logo.svg" alt="izipay" /></a>
       <ul class="nav-links">
         <li><a href="#">Ventas físicas <span class="chevron">›</span></a></li>
         <li><a href="#">Ventas digitales <span class="chevron">›</span></a></li>
@@ -56,14 +54,23 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="page-hero">
-  <p class="section-label" style="color:#7DE8E6;margin-bottom:8px;">Quiénes somos</p>
-  <h1>Nuestro propósito es cambiar lo que no tiene sentido</h1>
-  <p>Para que comprar y vender sea más fácil, más seguro y más inclusivo en todo el Perú.</p>
+<!-- HERO con imagen real del edificio izipay -->
+<section style="position:relative;overflow:hidden;min-height:520px;display:flex;align-items:center;">
+  <img src="assets/otrassetions/Section u{2192} Picture u{2192} Imagen Home Izipay.png"
+       alt="izipay oficinas" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;" />
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,50,48,.82) 0%,rgba(0,50,48,.45) 60%,transparent 100%);"></div>
+  <div style="position:relative;z-index:1;padding:80px 24px;max-width:1160px;margin:0 auto;width:100%;">
+    <p style="font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7DE8E6;margin-bottom:12px;">Quiénes somos</p>
+    <h1 style="font-size:clamp(28px,4vw,56px);font-weight:800;color:#fff;max-width:620px;line-height:1.15;margin-bottom:20px;">
+      Nuestro propósito es cambiar lo que no tiene sentido
+    </h1>
+    <p style="font-size:18px;color:rgba(255,255,255,.85);max-width:500px;line-height:1.6;">
+      Para que comprar y vender sea más fácil, más seguro y más inclusivo en todo el Perú.
+    </p>
+  </div>
 </section>
 
-<!-- LOGROS -->
+<!-- LOGROS con imágenes reales de los números -->
 <section class="page-section" id="logros" style="background:#F8FEFE;">
   <div class="page-section-inner">
     <p class="section-label">izipay en cifras</p>
@@ -72,23 +79,29 @@
 
     <div class="stats-grid">
       <div class="stat-card">
-        <div class="stat-num">+1.2M</div>
+        <img src="assets/otrassetions/+1.2 MM.png" alt="+1.2 MM comercios" style="height:56px;object-fit:contain;margin-bottom:8px;" />
         <div class="stat-label">Comercios afiliados en todo el Perú</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">+650</div>
+        <img src="assets/otrassetions/+650.png" alt="+650 colaboradores" style="height:56px;object-fit:contain;margin-bottom:8px;" />
         <div class="stat-label">Colaboradores apasionados por la innovación</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">26</div>
+        <img src="assets/otrassetions/26.png" alt="26 años" style="height:56px;object-fit:contain;margin-bottom:8px;" />
         <div class="stat-label">Años de trayectoria en el mercado</div>
       </div>
       <div class="stat-card">
-        <div class="stat-num">6°</div>
+        <img src="assets/otrassetions/6°.png" alt="6° GPTW" style="height:56px;object-fit:contain;margin-bottom:8px;" />
         <div class="stat-label">Puesto Great Place to Work 2025</div>
       </div>
     </div>
   </div>
+</section>
+
+<!-- NUESTRO IMPACTO — imagen completa -->
+<section style="overflow:hidden;">
+  <img src="assets/otrassetions/Nuestro impacto.png"
+       alt="Nuestro impacto" style="width:100%;display:block;max-height:600px;object-fit:cover;" />
 </section>
 
 <!-- HISTORIA -->
@@ -97,12 +110,15 @@
     <div>
       <p class="section-label">Nuestra historia</p>
       <h2 class="section-title">26 años transformando el pago en el Perú</h2>
-      <p style="font-size:16px;color:var(--izi-body);line-height:1.7;margin-bottom:32px;">
+      <p style="font-size:16px;color:var(--izi-body);line-height:1.7;margin-bottom:24px;">
         Somos el principal prestador de servicios de procesamiento de pagos con tarjetas y billeteras electrónicas del país. Desde 1999, lideramos un mercado en constante cambio con visión de futuro y compromiso con la inclusión financiera.
       </p>
-      <p style="font-size:15px;color:var(--izi-body);line-height:1.7;padding:20px 24px;background:#F3FCFC;border-left:3px solid var(--izi-teal);border-radius:0 12px 12px 0;">
+      <p style="font-size:15px;color:var(--izi-body);line-height:1.7;padding:20px 24px;background:#F3FCFC;border-left:3px solid var(--izi-teal);border-radius:0 12px 12px 0;margin-bottom:28px;">
         "Comprometidos con la sostenibilidad — nos esforzamos por innovar para que nuestros medios de pago sean más inclusivos, seguros y neutros en carbono."
       </p>
+      <!-- Certificación AENOR -->
+      <img src="assets/otrassetions/imagen de izi reduzco certificado por aenor - izipay fotos.png"
+           alt="Certificado AENOR" style="max-width:280px;border-radius:16px;" />
     </div>
     <div class="timeline" style="padding-top:8px;">
       <div class="timeline-item" data-year="1999">
@@ -134,32 +150,56 @@
   </div>
 </section>
 
-<!-- EQUIPO -->
-<section class="page-section" id="equipo" style="background:#F8FEFE;">
+<!-- PREMIOS Y RECONOCIMIENTOS -->
+<section class="page-section" style="background:#F8FEFE;">
+  <div class="page-section-inner">
+    <p class="section-label">Reconocimientos</p>
+    <h2 class="section-title">Premiados por hacer las cosas bien</h2>
+    <p class="section-subtitle">Nuestro compromiso con la sostenibilidad y el talento humano nos ha valido reconocimientos nacionales e internacionales.</p>
+    <div style="display:flex;gap:32px;flex-wrap:wrap;align-items:center;justify-content:center;">
+      <div style="background:#fff;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:center;gap:12px;min-width:220px;border:1.5px solid #E5EFEF;">
+        <img src="assets/otrassetions/Premio GPTW Gestion Sostenible 2025.png"
+             alt="Premio GPTW Gestión Sostenible 2025" style="height:120px;object-fit:contain;" />
+        <p style="font-size:14px;color:var(--izi-body);text-align:center;">Great Place to Work<br/>Gestión Sostenible 2025</p>
+      </div>
+      <div style="background:#fff;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:center;gap:12px;min-width:220px;border:1.5px solid #E5EFEF;">
+        <img src="assets/otrassetions/Premio Carbon Fingerprint 2025.png"
+             alt="Premio Carbon Fingerprint 2025" style="height:120px;object-fit:contain;" />
+        <p style="font-size:14px;color:var(--izi-body);text-align:center;">Carbon Footprint<br/>Certificación 2025</p>
+      </div>
+      <div style="background:#fff;border-radius:24px;padding:32px;display:flex;flex-direction:column;align-items:center;gap:12px;min-width:220px;border:1.5px solid #E5EFEF;">
+        <img src="assets/otrassetions/Picture u{2192} imagen de izi reduzco certificado por aenor - izipay fotos.png"
+             alt="Certificado AENOR" style="height:120px;object-fit:contain;" />
+        <p style="font-size:14px;color:var(--izi-body);text-align:center;">Certificación AENOR<br/>Huella de carbono</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO con fotos reales -->
+<section class="page-section" id="equipo">
   <div class="page-section-inner">
     <p class="section-label">Liderazgo</p>
     <h2 class="section-title">El equipo detrás de izipay</h2>
     <p class="section-subtitle">Personas con propósito, comprometidas con simplificar el comercio peruano.</p>
     <div class="team-grid">
-      <!-- fotos en blank hasta que el usuario las provea -->
+
       <div class="team-card">
         <div class="team-photo">
-          <div class="photo-placeholder">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006462" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          </div>
+          <img src="assets/otrassetions/Felipe Venturo.png" alt="Felipe Venturo" />
         </div>
         <div class="team-name">Felipe Venturo</div>
         <div class="team-role">Gerencia General</div>
       </div>
+
       <div class="team-card">
         <div class="team-photo">
-          <div class="photo-placeholder">
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#006462" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-          </div>
+          <img src="assets/otrassetions/Jorge Valdivia.png" alt="Jorge Valdivia" />
         </div>
         <div class="team-name">Jorge Valdivia</div>
         <div class="team-role">Estrategia y Transformación Digital</div>
       </div>
+
       <div class="team-card">
         <div class="team-photo">
           <div class="photo-placeholder">
@@ -169,6 +209,7 @@
         <div class="team-name">Alejandro Rey</div>
         <div class="team-role">Desarrollo y Mejora Continua</div>
       </div>
+
       <div class="team-card">
         <div class="team-photo">
           <div class="photo-placeholder">
@@ -178,6 +219,7 @@
         <div class="team-name">Demian Ballón</div>
         <div class="team-role">Operaciones</div>
       </div>
+
       <div class="team-card">
         <div class="team-photo">
           <div class="photo-placeholder">
@@ -187,6 +229,7 @@
         <div class="team-name">Paola Rodríguez</div>
         <div class="team-role">Riesgos y Cumplimiento</div>
       </div>
+
       <div class="team-card">
         <div class="team-photo">
           <div class="photo-placeholder">
@@ -196,36 +239,33 @@
         <div class="team-name">Virginia Blume</div>
         <div class="team-role">Contabilidad y Finanzas</div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- RESPALDO -->
-<section class="page-section" id="respaldo">
+<!-- RESPALDO con logos reales -->
+<section class="page-section" id="respaldo" style="background:#F8FEFE;">
   <div class="page-section-inner">
     <p class="section-label">Confianza y solidez</p>
-    <h2 class="section-title">Respaldo del Grupo Interbank</h2>
+    <h2 class="section-title">Respaldo del Grupo Intercorp</h2>
     <p class="section-subtitle">Desde 2022, somos parte del ecosistema financiero más innovador del Perú.</p>
     <div class="respaldo-grid">
-      <!-- logos en blank hasta que el usuario los provea -->
-      <div class="respaldo-card" style="flex-direction:column;gap:8px;">
-        <div style="width:80px;height:80px;background:#E8F7F7;border-radius:14px;display:flex;align-items:center;justify-content:center;">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#006462" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M3 9h18M9 21V9"/></svg>
-        </div>
-        <div style="font-size:13px;color:var(--izi-body);text-align:center;">Logo Interbank<br/><span style="font-size:11px;opacity:.6;">(pendiente)</span></div>
+      <div class="respaldo-card">
+        <img src="assets/otrassetions/Picture u{2192} Logo de Interbank.png" alt="Interbank" style="max-height:60px;object-fit:contain;" />
       </div>
-      <div class="respaldo-card" style="flex-direction:column;gap:8px;">
-        <div style="width:80px;height:80px;background:#E8F7F7;border-radius:14px;display:flex;align-items:center;justify-content:center;">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#006462" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v9l4 4"/></svg>
-        </div>
-        <div style="font-size:13px;color:var(--izi-body);text-align:center;">Logo Grupo<br/><span style="font-size:11px;opacity:.6;">(pendiente)</span></div>
+      <div class="respaldo-card">
+        <img src="assets/otrassetions/Respaldo de Intercorp.png" alt="Intercorp" style="max-height:60px;object-fit:contain;" />
+      </div>
+      <div class="respaldo-card">
+        <img src="assets/otrassetions/Logo de Izipay.png" alt="izipay" style="max-height:60px;object-fit:contain;" />
       </div>
     </div>
   </div>
 </section>
 
 <!-- CONECTA -->
-<section class="page-section" id="conecta" style="background:#F8FEFE;">
+<section class="page-section" id="conecta">
   <div class="page-section-inner">
     <p class="section-label">Atención al cliente</p>
     <h2 class="section-title">Conecta con nosotros</h2>
@@ -283,7 +323,6 @@
 </section>
 
 <script>
-  // Scroll navbar
   window.addEventListener('scroll', () => {
     document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 10);
   });
