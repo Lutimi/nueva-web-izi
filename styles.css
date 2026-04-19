@@ -558,9 +558,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .sim-inner {
   display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 48px;
-  align-items: start;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 56px;
+  align-items: center;
 }
 .sim-disclaimer-card {
   grid-column: 1 / -1;
@@ -601,35 +601,37 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .sim-item span { font-size: 13px; color: #637176; }
 .sim-card {
   background: rgba(255,255,255,.80);
-  border-radius: 48px;
-  padding: 24px 8px 8px;
+  border-radius: 32px;
+  padding: 28px 28px 28px;
   outline: 1px solid #D8D8D8;
 }
 .sim-tabs {
   display: flex;
-  border-radius: 56px;
+  border-radius: 100px;
   background: #F9FAFA;
   outline: 1px solid #D6DADA;
-  padding: 8px 12px;
-  margin-bottom: 8px;
+  padding: 6px;
+  margin-bottom: 24px;
   width: 100%;
-  gap: 8px;
+  gap: 4px;
 }
 .stab {
   flex: 1;
-  padding: 16px 32px;
+  padding: 14px 20px;
   border-radius: 100px;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 600;
   color: #636565;
   transition: background .2s, color .2s;
+  text-align: center;
 }
 .stab.active { background: #008380; color: #fff; }
-.sim-form { display: flex; flex-direction: column; gap: 20px; }
+.sim-form { display: flex; flex-direction: column; gap: 16px; }
 .sim-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  align-items: start;
 }
 .sim-field { display: flex; flex-direction: column; gap: 6px; }
 .sim-field label {
@@ -639,18 +641,20 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .sim-field input[type="number"],
 .sim-field input[type="email"] {
-  padding: 12px 24px;
+  padding: 12px 20px;
   border: none;
-  border-radius: 32px;
-  outline: 1px solid #006462;
-  font-size: 16px;
+  border-radius: 100px;
+  outline: 1px solid #D8D8D8;
+  font-size: 15px;
   font-family: 'Nunito', inherit;
   color: #263238;
   background: #fff;
   transition: outline-color .2s;
+  width: 100%;
+  box-sizing: border-box;
 }
 .sim-field input:focus { outline-color: #008380; outline-width: 2px; }
-.sim-field input::placeholder { color: #636565; opacity: .6; }
+.sim-field input::placeholder { color: #9CA3AF; }
 .sim-radios {
   display: flex;
   gap: 16px;
@@ -667,33 +671,36 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .radio-label input[type="radio"] { accent-color: #008380; }
 .sim-output {
-  padding: 12px 16px;
-  border-radius: 32px;
-  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 100px;
+  font-size: 15px;
   font-weight: 700;
   color: #0B201F;
   background: #EEEEEE;
   min-height: 48px;
   display: flex;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
 }
 .sim-output-main {
   font-size: 16px;
   color: #0B201F;
   font-weight: 700;
 }
-.sim-email-row { grid-template-columns: 1fr auto; align-items: flex-end; }
+.sim-email-row { grid-template-columns: 1fr auto; align-items: flex-end; gap: 12px; }
 .sim-field-grow { flex: 1; }
 .btn-sim-send {
-  padding: 12px 24px;
+  padding: 0 28px;
   background: #008380;
   color: #fff;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   border-radius: 100px;
   height: 48px;
   white-space: nowrap;
   transition: background .2s;
+  flex-shrink: 0;
 }
 .btn-sim-send:hover { background: #006462; }
 .sim-privacy {
