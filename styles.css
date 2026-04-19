@@ -736,32 +736,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .sim-disclaimer-card strong { font-weight: 700; }
 
 /* ─── BENEFICIOS ───────────────────────────────────────── */
+/* ─── BENEFICIOS ──────────────────────────────────────── */
 .beneficios-section {
-  padding: 0;
-  background: transparent;
+  padding: 80px 24px;
+  background: #fff;
 }
 .bene-inner {
   display: grid;
-  grid-template-columns: 380px 1fr;
-  gap: 0;
-  align-items: flex-start;
-  max-width: 1440px;
+  grid-template-columns: 360px 1fr;
+  gap: 64px;
+  align-items: center;
+  max-width: 1280px;
   margin: 0 auto;
-  min-height: 744px;
 }
 .bene-left {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 56px 40px 40px 168px;
-  min-height: 744px;
+  padding: 0;
   position: sticky;
   top: 82px;
 }
 .bene-subtitle {
   font-family: 'Poppins', sans-serif;
-  font-size: 30px;
+  font-size: 28px;
   font-weight: 400;
   color: var(--izi-dark);
   line-height: 1.2;
@@ -777,30 +776,42 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .bene-cards {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  padding: 56px 32px 40px;
+  gap: 24px;
+  padding: 0;
 }
 .bene-card {
   background: #fff;
-  border-radius: var(--radius-card);
+  border-radius: 32px;
   overflow: hidden;
-  box-shadow: 0 10px 10px -5px rgba(0,131,128,.04), 0 20px 25px -5px rgba(0,131,128,.10);
+  box-shadow: 0 20px 25px -5px rgba(0,131,128,.10), 0 10px 10px -5px rgba(0,131,128,.04);
   transition: transform .25s cubic-bezier(.16,1,.3,1), box-shadow .25s;
-  width: 544px;
-  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  min-height: 180px;
 }
-.bene-card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,131,128,.15); }
-.bene-img-wrap { height: 312px; overflow: hidden; background: #F8F8F8; position: relative; }
+.bene-card:hover { transform: translateY(-4px); box-shadow: 0 24px 48px -8px rgba(0,131,128,.18); }
+.bene-img-wrap {
+  width: 240px;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: #F0FAFA;
+}
 .bene-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
-.bene-info { padding: 24px; height: 148px; display: flex; flex-direction: column; gap: 8px; }
+.bene-info {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
 .bene-info h4 {
   font-family: 'Poppins', sans-serif;
   font-size: 20px;
   font-weight: 700;
   color: var(--izi-title);
-  line-height: 1.4;
+  line-height: 1.3;
 }
-.bene-info p { font-size: 16px; color: var(--izi-body); line-height: 1.5; font-weight: 600; }
+.bene-info p { font-size: 15px; color: var(--izi-body); line-height: 1.6; }
 
 /* ─── TESTIMONIOS ───────────────────────────────────────── */
 .testimonios-section {
@@ -957,8 +968,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .marcas-section {
   padding: 64px 0;
   background: #fff;
+  border-top: 1px solid #f0f0f0;
 }
-.marcas-header { text-align: center; margin-bottom: 24px; }
+.marcas-header { text-align: center; margin-bottom: 32px; padding: 0 24px; }
 .marcas-header h2 {
   font-family: 'Poppins', sans-serif;
   font-size: 32px;
@@ -971,13 +983,34 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: #636565;
   font-weight: 600;
 }
+.marcas-track-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.marcas-track-wrap::before,
+.marcas-track-wrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+.marcas-track-wrap::before { left: 0; background: linear-gradient(90deg, #fff 0%, transparent 100%); }
+.marcas-track-wrap::after  { right: 0; background: linear-gradient(270deg, #fff 0%, transparent 100%); }
 .marcas-row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
+  flex-wrap: nowrap;
+  gap: 64px;
   align-items: center;
-  justify-content: center;
-  margin-top: 16px;
+  animation: marqueeSlide 22s linear infinite;
+  width: max-content;
+  padding: 8px 0;
+}
+.marcas-row:hover { animation-play-state: paused; }
+@keyframes marqueeSlide {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 .marcas-row img {
   max-height: 56px;
@@ -986,6 +1019,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   filter: grayscale(1);
   opacity: .55;
   transition: filter .2s, opacity .2s;
+  flex-shrink: 0;
 }
 .marcas-row img:hover { filter: none; opacity: 1; }
 
@@ -1272,8 +1306,31 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ─── MARCA ROW ──────────────────────────────────────── */
 @media (max-width: 768px) {
-  .marcas-row { gap: 24px; }
+  .marcas-row { gap: 40px; }
   .marcas-row img { max-height: 40px; max-width: 100px; }
+}
+
+/* ─── BENEFICIOS RESPONSIVE ─────────────────────────── */
+@media (max-width: 1024px) {
+  .bene-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .bene-left {
+    position: static;
+    text-align: center;
+    align-items: center;
+  }
+}
+@media (max-width: 640px) {
+  .bene-card {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .bene-img-wrap {
+    width: 100%;
+    height: 200px;
+  }
 }
 
 /* ═══ QUICK TOOLS BAR ═══════════════════════════════════ */
@@ -1610,30 +1667,32 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .prod-card {
   border-radius: 16px;
-  width: 256px;
-  min-height: 560px;
+  flex: 1 1 220px;
+  min-width: 200px;
+  max-width: 280px;
+  min-height: auto;
 }
 .prod-info h3 {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 700;
   color: var(--izi-dark);
 }
-.prod-info p { font-size: 16px; color: var(--izi-body); }
+.prod-info p { font-size: 14px; color: var(--izi-body); }
 .prod-grid {
   display: flex;
-  gap: 32px;
+  gap: 24px;
   justify-content: center;
   flex-wrap: wrap;
 }
 .prod-img-wrap {
-  height: 244px;
-  background: #fff;
+  height: 200px;
+  background: #f0fafa;
 }
 
 @media (max-width: 768px) {
   .prod-sub-tabs { flex-wrap: wrap; gap: 8px; }
   .psub { font-size: 16px; height: 44px; padding: 0 18px; }
-  .prod-card { width: 100%; max-width: 320px; min-height: auto; }
+  .prod-card { width: 100%; max-width: 320px; min-height: auto; flex: 0 0 calc(50% - 12px); }
 }
 
 /* ═══════════════════ NAV DROPDOWN ═══════════════════ */
